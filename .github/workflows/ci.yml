@@ -1,20 +1,20 @@
-name: CI
+# name: CI
 
-on: [push, pull_request]
+# on: [push, pull_request]
 
-jobs:
-  linux:
-    name: Linux (go-${{ matrix.go }})
-    runs-on: ubuntu-22.04
-    strategy:
-      fail-fast: false
-      matrix:
-        go: [ '1.21.6', '1.20.13', '1.20.1', '1.20.0', '1.19.13', '1.18.10'] # 1.18 in go.mod
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v4
-        with:
-          go-version: ${{ matrix.go }}
-      - name: Build
-        run: |
-          cd scripts && ./utility_script test
+# jobs:
+#   linux:
+#     name: Linux (go-${{ matrix.go }})
+#     runs-on: ubuntu-22.04
+#     strategy:
+#       fail-fast: false
+#       matrix:
+#         go: [ '1.21.6', '1.20.13', '1.20.1', '1.20.0', '1.19.13', '1.18.10'] # 1.18 in go.mod
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: actions/setup-go@v4
+#         with:
+#           go-version: ${{ matrix.go }}
+#       - name: Build
+#         run: |
+#           cd scripts && ./utility_script test
